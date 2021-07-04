@@ -3,6 +3,8 @@ defmodule Inmana.Restaurant do
 
   import Ecto.Changeset
 
+  alias Inmana.Supply
+
   @primary_key {:id, :binary_id, autogenerate: true}
 
   @required_params [:email, :name]
@@ -12,6 +14,7 @@ defmodule Inmana.Restaurant do
   schema "restaurants" do
     field :email, :string
     field :name, :string
+    has_many :supplies, Supply
     timestamps()
   end
 
