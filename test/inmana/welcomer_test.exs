@@ -12,15 +12,15 @@ defmodule Inmana.WelcomerTest do
     end
 
     test "When the user is not special, returns a message." do
-      params = %{"name" => "Rafael", "age" => "25"}
-      expected_result = {:ok, "Welcome Rafael!"}
+      params = %{"name" => "rafael", "age" => "25"}
+      expected_result = {:ok, "Welcome rafael!"}
       result = Welcomer.welcome(params)
       assert result == expected_result
     end
 
     test "When the user is under age, returns an error." do
-      params = %{"name" => "Rafael", "age" => "17"}
-      expected_result = {:error, "You shall not pass Rafael!"}
+      params = %{"name" => "rafael", "age" => "17"}
+      expected_result = {:error, "You shall not pass rafael!"}
       result = Welcomer.welcome(params)
       assert result == expected_result
     end
